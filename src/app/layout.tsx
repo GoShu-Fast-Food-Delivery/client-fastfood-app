@@ -10,6 +10,8 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import { AppProvider } from '@/contexts/AppProvider';
 import RouteProgress from '@/components/route/RouteProgress';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -39,8 +41,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Toaster richColors position="bottom-center" closeButton />
           <SidebarProvider>
             <main className="w-full">
-              <Navbar />
+              {/* <Navbar /> */}
+              <Header />
               <div className="px-4 mb-5">{children}</div>
+              {/* <Footer /> */}
+              <Footer />
             </main>
           </SidebarProvider>
           </ThemeProvider>
